@@ -22,4 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Rules to obey one the way to complete this project
+## Create branches
+Choose a format of branch name from below;
+- feature/
+- fix/
+
+
+
 # sport_spot
+
