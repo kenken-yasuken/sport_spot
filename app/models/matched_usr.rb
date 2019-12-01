@@ -1,2 +1,0 @@
-class MatchedUsr < ApplicationRecord
-end
