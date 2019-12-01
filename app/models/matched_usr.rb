@@ -1,0 +1,2 @@
+class MatchedUsr < ApplicationRecord
+end
