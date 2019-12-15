@@ -1,2 +1,8 @@
 @import "normalize.css/normalize.css";
 @import "bulma/css/bulma.css";
+
+.long-label{
+  display: block;
+  float: left;
+  width: 100px;
+}

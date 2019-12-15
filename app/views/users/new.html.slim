@@ -1,12 +1,82 @@
-h2.title =t('activerecorde.actions.create')
+h2.title = t('activerecord.actions.create')
 
-=form_for(@user) do |f|
+=form_with(model: @user) do |f|
   .field.is-horizontal
-    .field-lable.is-normal
-      = f.label :family_name
-      = f.text_field :family_name, class: 'input', placeholder: '姓'
+    .field-label.is-normal
+      .label
+        = f.label :family_name, class: 'label'
+    .field-body
+      .field
+        = f.text_field :family_name, class: 'input', placeholder: '山田'
+      .field.is-horizontal
+        .field-label.is-normal
+          = f.label :first_name, class: "label"
+        .field-body
+          = f.text_field :first_name, class: 'input', placeholder: '太郎'
+  .field.is-horizontal
+    .field-label.is-normal
+      .label
+        = f.label :family_name_kana, class: 'label'
+    .field-body
+      .field
+        = f.text_field :family_name_kana, class: 'input', placeholder: 'ヤマダ'
+      .field.is-horizontal
+        .field-label.is-normal
+          .label
+            = f.label :first_name_kana, class: "label"
+        .field-body
+          .field
+            = f.text_field :first_name_kana, class: 'input', placeholder: 'タロウ'
+  .field.is-horizontal
+    .field-label.is-normal
+      .label
+        = f.label :nickname, class: 'label'
+    .field-body
+      .field
+        = f.text_field :nickname, class: 'input'
+  .field.is-horizontal
+    .field-label.is-normal
+      .label
+        = f.label :gender, class: 'label'
+    .field-body
+      .field
+        = f.radio_button :gender, 'male'
+        = f.label :gender, '男性'
+        = f.radio_button :gender, 'female'
+        = f.label :gender, '女性'
+  .field.is-horizontal
+    .field-label.is-normal
+      .label
+        = f.label :age, class: 'label'
+    .field-body
+      .field
+        = f.text_field :age, class: 'input'
+  .field.is-horizontal
+    .field-label.is-normal
+      .label
+        = f.label :birthday, class: 'label'
+    .field-body
+      .field
+        = f.date_select :age, :start_year => Time.now.year, :end_year => Time.now.year - 100
+  .field.is-horizontal
+    .field-label.is-normal
+      .label
+        = f.label :user_type_id, class: 'label'
+    .field-body.control
+      .radio
+        - User.user_type_ids_i18n.each do |key, label|
+          = f.radio_button :user_type_id, key, class: "radio", id: key
+          label(for=key)= label
+  .field.is-horizontal
+    .field-label.is-normal
+      .label
+        = f.label :password, class: 'label'
+    .field-body
+      .field
+        = f.password_field :password, class: 'input'
 
-
+  .field.is-horizontal.is-pulled-right= f.submit nil, class: 'button is-primary'
+    = link_to users_path(@user), class: 'button is-link'
 
 
 
