@@ -1,15 +1,30 @@
 ja:
-  activerecorde:
-    models: ユーザー
+  activerecord:
+    models:
+      user: 'ユーザー'
     actions:
-      create: ユーザー登録
+      index: 'ユーザー一覧'
+      create: 'ユーザー登録'
     attributes:
-      family_name: 姓
-      first_name: 名
-      family_name_kana: '姓(カナ)'
-      first_name_kana: '名(カナ)'
-      nickname: ニックネーム
-      gender: 性別
-      age: 年齢
-      birthday: 誕生日
-      user_type_id: ユーザータイプ
+      user:
+        family_name: '姓'
+        first_name: '名'
+        family_name_kana: '姓(カナ)'
+        first_name_kana: '名(カナ)'
+        nickname: 'ニックネーム'
+        gender: '性別'
+        age: '年齢'
+        birthday: '誕生日'
+        user_type_id: 'ユーザータイプ'
+        password: 'パスワード'
+    parts:
+      user:
+        username: 'お名前'
+  enums:
+    user:
+      gender:
+        male: '男性'
+        female: '女性'
+      user_type_id:
+        trainer: 'トレーナー'
+        trainee: '生徒さん'
