@@ -5,9 +5,15 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    # if @user.save!
-    #   redirect_to user_path(@user), notice: "ユーザー登録が完了しました"
-    # end
+  end
+
+  def create
+    @user = User.new(user_params)
+    p params[:user][:age]
+    p 1111111111111
+    if @user.save!
+      redirect_to user_path(@user), notice: "ユーザー登録が完了しました"
+    end
   end
 
   private

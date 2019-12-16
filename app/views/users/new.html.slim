@@ -57,7 +57,7 @@ h2.title = t('activerecord.actions.create')
         = f.label :birthday, class: 'label'
     .field-body
       .field
-        = f.date_select :age, :start_year => Time.now.year, :end_year => Time.now.year - 100
+        = f.date_select :birthday, :start_year => Time.now.year, :end_year => Time.now.year - 100
   .field.is-horizontal
     .field-label.is-normal
       .label
@@ -70,10 +70,10 @@ h2.title = t('activerecord.actions.create')
   .field.is-horizontal
     .field-label.is-normal
       .label
-        = f.label :password, class: 'label'
+        = f.label :encrypted_password, class: 'label'
     .field-body
       .field
-        = f.password_field :password, class: 'input'
+        = f.password_field :encrypted_password, class: 'input'
 
   .field.is-horizontal.is-pulled-right= f.submit nil, class: 'button is-primary'
     = link_to users_path(@user), class: 'button is-link'
