@@ -1,0 +1,31 @@
+/ .nav.justify-content-end
+/   = link_to '一覧', users_path, class: 'nav-link'
+
+table.table.table-hover
+  tbody
+    tr
+      th = User.human_attribute_name(:family_name)
+      td = @user.family_name
+    tr
+      th = User.human_attribute_name(:first_name)
+      td = @user.first_name
+    tr
+      th = User.human_attribute_name(:family_name_kana)
+      td = @user.family_name_kana
+    tr
+      th = User.human_attribute_name(:first_name_kana)
+      td = @user.first_name_kana
+    tr
+      th = User.human_attribute_name(:nickname)
+      td = @user.nickname
+    tr
+      th = User.human_attribute_name(:gender)
+      td = @user.gender_i18n
+    tr
+      th = User.human_attribute_name(:birthday)
+      td = @user.birthday.strftime('%Y年%-m月%-d日')
+    tr
+      th = User.human_attribute_name(:user_type_id)
+      td = @user.user_type_id_i18n
+
+= link_to '編集', edit_user_path(@user), class: 'button button-is-link'
