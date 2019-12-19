@@ -1,0 +1,56 @@
+= form_with(model: [ :cs, user ], local: true, class: "control") do |form|
+  .column.is-half.is-offset-one-quarter
+    = form.error_messages_all
+
+  = form.hidden_field :user_type
+  .field.is-horizontal
+    .field-label= form.label :login_id, class: "label", require: true
+    .field-body
+      .field
+        p.control= form.text_field :login_id, id: :user_login_id, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :username, class: "label", require: true
+    .field-body
+      .field
+        p.control= form.text_field :username, id: :user_username, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :name_kana, class: "label", require: true
+    .field-body
+      .field
+        p.control= form.text_field :name_kana, id: :user_username, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :email, class: "label"
+    .field-body
+      .field
+        p.control= form.text_field :email, id: :user_email, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :password, class: 'label', require: true
+    .field-body
+      .field
+        p.control= form.password_field :password, class: 'input'
+
+  .field.is-horizontal
+    .field-label= form.label :password_confirmation, class: 'label', require: true
+    .field-body
+      .field
+        p.control= form.password_field :password_confirmation, class: 'input'
+
+  .field.is-horizontal
+    .field-label= form.label :user_roles, class: 'label'
+    .field-body
+      .field
+        p.control
+          = form.fields_for :user_roles do |cf|
+            = cf.hidden_field :id
+            .select= cf.select :role_id, Role.cs_user.map { |r| [r.name, r.id] },
+                    { include_blank: 'ログイン不可' }, class: 'input'
+
+  .field.is-horizontal
+    .field-label
+    .field-body
+      .field
+        .control.is-pulled-right= form.submit nil, class: "button is-primary"
