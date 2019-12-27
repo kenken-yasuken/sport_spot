@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def new
@@ -10,12 +10,22 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save!
-      redirect_to user_path(@user), notice: "ユーザー登録が完了しました"
+      redirect_to user_path(@user), notice: I18n.t("activerecord.flash.user.actions.create.success")
     end
   end
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to users_path, notice: I18n.t("activerecord.flash.user.actions.udpate.success")
+    end
   end
 
   private

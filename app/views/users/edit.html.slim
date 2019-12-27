@@ -1,0 +1,54 @@
+= form_with(model: @user, local: true, class: "control") do |form|
+  .field.is-horizontal
+    .field-label= form.label :family_name, class: "label", require: true
+    .field-body
+      .field
+        p.control= form.text_field :family_name, id: :family_name, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :first_name, class: "label", require: true
+    .field-body
+      .field
+        p.control= form.text_field :first_name, id: :first_name, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :family_name_kana, class: "label", require: true
+    .field-body
+      .field
+        p.control= form.text_field :family_name_kana, id: :family_name_kana, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :nickname, class: "label", require: true
+    .field-body
+      .field
+        p.control= form.text_field :nickname, id: :nickname, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :age, class: "label"
+    .field-body
+      .field
+        p.control= form.text_field :age, id: :user_email, class: "input"
+
+  .field.is-horizontal
+    .field-label= form.label :birthday, class: 'label', require: true
+    .field-body
+      .field
+        p.control= form.text_field :birthday, class: 'input'
+
+  .field.is-horizontal
+    .field-label= form.label :user_type_id, class: 'label', require: true
+    .field-body
+      .field
+        p.control= form.text_field :user_type_id, class: 'input'
+
+  .field.is-horizontal
+      .field-label= form.label :encrypted_password, class: 'label', require: true
+      .field-body
+        .field
+          p.control= form.password_field :encrypted_password, class: 'input'
+
+  .field.is-horizontal
+    .field-label
+    .field-body
+      .field
+        .control.is-pulled-right= form.submit nil, class: "button is-primary"

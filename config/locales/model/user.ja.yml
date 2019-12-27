@@ -17,6 +17,13 @@ ja:
         birthday: '誕生日'
         user_type_id: 'ユーザータイプ'
         password: 'パスワード'
+    flash:
+      user:
+        actions:
+          create:
+            success: 'ユーザー登録が完了しました'
+          update:
+            success: 'ユーザー情報を更新しました'
     parts:
       user:
         username: 'お名前'

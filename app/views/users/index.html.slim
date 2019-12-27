@@ -1,0 +1,10 @@
+| 一覧
+
+/ thead
+/   th= User.human_attribute_name :family_name
+
+
+/ tbody
+/   - @users.each do |user|
+/     td= user.family_name
+
