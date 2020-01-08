@@ -57,3 +57,5 @@ gem 'rails-i18n', '~> 5.1'
 gem 'enum_help'
 
 gem "rack", ">= 2.0.8"
+
+gem 'devise'
