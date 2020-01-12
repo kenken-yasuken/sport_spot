@@ -15,12 +15,11 @@ html
         = link_to "ログアウト", sign_out_path
       - else
         = link_to "サインイン", new_user_registration_path
-        <%= link_to "ログイン", new_user_session_path
+        = link_to "ログイン", new_user_session_path
       end
   body
     .notice
       = notice
     .alert
       = alert
-  <p class="alert"><%= alert %></p>
     = yield
