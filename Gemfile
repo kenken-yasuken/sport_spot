@@ -59,3 +59,9 @@ gem 'enum_help'
 gem "rack", ">= 2.0.8"
 
 gem 'devise'
+
+gem 'devise-i18n'
+
+gem 'devise-i18n-views'
+
+gem 'html2slim'
