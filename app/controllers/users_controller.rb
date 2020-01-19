@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       %i(family_name first_name family_name_kana first_name_kana nickname gender
-         age birthday user_type_id encrypted_password)
+         age birthday user_type_id encrypted_password user_id email)
     )
   end
 end
