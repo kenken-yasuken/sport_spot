@@ -58,11 +58,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => true
+    :enable_starttls_auto => true,
     :address => "smtp.gmail.com", # smtpサーバーのホスト名
     :port => 587,
     :authentication => :plain,
-    :user_name => "送信元のメールアドレスのアカウント名",
-    :password => "メールアカウントのパスワード"
+    :user_name => ENV['EMAIL_USER_NAME'],
+    :password => ENV['EMAIL_PASSWORD']
   }
 end

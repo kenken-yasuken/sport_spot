@@ -65,3 +65,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 
 gem 'html2slim'
+
+gem 'dotenv-rails'
+
+gem 'config'
