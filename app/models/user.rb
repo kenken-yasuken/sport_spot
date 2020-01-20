@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :rememberable, :validatable, :confirmable, :lockable, :trackable,
          :authentication_keys => [:user_name]
 
-  validates :user_name, uniqueness: true, presence: true
+  validates :user_name, presence: true, uniqueness: true, length: {maximum: 50}
+
 
   # user_nameを使用してログインするようオーバーライド
   def self.find_first_by_auth_conditions(warden_conditions)

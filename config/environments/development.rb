@@ -61,6 +61,7 @@ Rails.application.configure do
     :enable_starttls_auto => true,
     :address => "smtp.gmail.com", # smtpサーバーのホスト名
     :port => 587,
+    :domain => 'smtp.gmail.com',
     :authentication => :plain,
     :user_name => ENV['EMAIL_USER_NAME'],
     :password => ENV['EMAIL_PASSWORD']
