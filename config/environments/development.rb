@@ -57,11 +57,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.raise_delivery_errors = true
   ActionMailer::Base.delivery_method = :smtp
-  # ActionMailer::Base.smtp_settings = {
-  #   :address => "smtp.gmail.com", # smtpサーバーのホスト名
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :user_name => "送信元のメールアドレスのアカウント名",
-  #   :password => "メールアカウントのパスワード"
-  # }
+  ActionMailer::Base.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com", # smtpサーバーのホスト名
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :authentication => :plain,
+    :user_name => ENV['EMAIL_USER_NAME'],
+    :password => ENV['EMAIL_PASSWORD']
+  }
 end

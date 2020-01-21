@@ -17,6 +17,7 @@ ja:
         birthday: '誕生日'
         user_type_id: 'ユーザータイプ'
         password: 'パスワード'
+        user_name: 'ユーザー名'
     flash:
       user:
         actions:
